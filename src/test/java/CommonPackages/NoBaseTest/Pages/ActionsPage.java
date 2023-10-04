@@ -17,7 +17,6 @@ public class ActionsPage {
         return driver.findElement(locator);
     }
     protected static void click(WebDriver driver, By locator){
-
         findElement(driver, locator).click();
     }
 }
