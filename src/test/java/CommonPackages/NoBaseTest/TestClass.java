@@ -34,7 +34,7 @@ public class TestClass {
     }
 
     @Test
-    public void test2(){
+    public void testSearch(){
         Assert.assertNotEquals(
                 homePage.
                         sendInputAndClickSearch("Laptop").

@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 public class TestClass extends BaseTest{
 
     @Test
-    public void test1(){
+    public void testDemo(){
         baseTestHome.clickOnRegisterBtn();
     }
 
     @Test
-    public void test2(){
+    public void testSearch(){
         Assert.assertNotEquals(
         baseTestHome.
                 sendInputAndClickSearch("Laptop").

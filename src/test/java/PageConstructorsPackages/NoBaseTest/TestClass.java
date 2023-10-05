@@ -2,8 +2,10 @@ package PageConstructorsPackages.NoBaseTest;
 
 import PageConstructorsPackages.Pages.PageConstructorsHome;
 import PageConstructorsPackages.Pages.PageConstructorsLogin;
+import PageConstructorsPackages.Pages.PageConstructorsSearch;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,6 +28,14 @@ public class TestClass {
     public void testDemo(){
         new PageConstructorsHome(driver).clickOnLoginBtn();
         new PageConstructorsLogin(driver).fillLoginData("","").clickConfLoginBtn();
+    }
+
+    @Test
+    public void testSearch(){
+        new PageConstructorsHome(driver).sendInputAndClickSearch("Laptop");
+        Assert.assertNotEquals(
+                new PageConstructorsSearch(driver).getSearchOutputs(),0
+                ,"No Search Results Match the Input");
     }
 
     @AfterMethod
