@@ -16,7 +16,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * This class contains the whole logic of setting & customizing your driver setup.
  * Pros: flexible way of setting and customizing your driver, ensuring driver thread-safety
  * better encapsulation and having it in a different class will help with working on the logic in a better way
- * Cons: can be a little bit harder to implement if not used to it.
+ * Cons: can be a bit harder to implement if not used to it.
  */
 
 public class DriverFactory {

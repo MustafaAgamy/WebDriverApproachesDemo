@@ -30,5 +30,9 @@ public class BasePage {
 
         findElement(locator).click();
     }
+    protected void sendKeys(By locator, String keys){
+
+        findElement(locator).sendKeys(keys);
+    }
 
 }

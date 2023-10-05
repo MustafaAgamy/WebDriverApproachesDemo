@@ -9,14 +9,12 @@ import org.testng.annotations.BeforeMethod;
  class BaseTest {
 
     protected WebDriver driver;
-    protected BaseTestHome baseTestHome;
 
     @BeforeMethod
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.navigate().to("https://demo.nopcommerce.com/");
-
     }
 
 

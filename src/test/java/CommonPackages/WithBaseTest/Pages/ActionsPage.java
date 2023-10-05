@@ -13,4 +13,8 @@ public class ActionsPage {
 
         findElement(driver, locator).click();
     }
+    protected static void sendKeys(WebDriver driver, By locator, String keys){
+
+        findElement(driver, locator).sendKeys(keys);
+    }
 }

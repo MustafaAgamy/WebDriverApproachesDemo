@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeMethod;
  class BaseTest {
 
     protected WebDriver driver;
-    DriverFactoryStaticObjs pageObjects;
+    protected DriverFactoryStaticObjs pageObjects;
 
     @BeforeMethod
     public void setUp(){

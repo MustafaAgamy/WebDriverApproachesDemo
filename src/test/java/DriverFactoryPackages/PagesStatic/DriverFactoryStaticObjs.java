@@ -4,16 +4,20 @@ import org.openqa.selenium.WebDriver;
 
 public class DriverFactoryStaticObjs {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     public DriverFactoryStaticObjs(WebDriver driver){
-        DriverFactoryStaticObjs.driver = driver;
+        this.driver = driver;
     }
 
-    public static DriverFactoryStaticHome goHome(){
+    public  DriverFactoryStaticHome goHome(){
         return new DriverFactoryStaticHome(driver);
     }
-    public static DriverFactoryStaticLogin goLogin(){
+    public  DriverFactoryStaticLogin goLogin(){
         return new DriverFactoryStaticLogin(driver);
+    }
+
+    public  DriverFactoryStaticSearch goSearch(){
+        return new DriverFactoryStaticSearch(driver);
     }
 }

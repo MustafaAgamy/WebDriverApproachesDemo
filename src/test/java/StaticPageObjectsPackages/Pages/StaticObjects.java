@@ -11,16 +11,16 @@ import org.openqa.selenium.WebDriver;
  */
 public class StaticObjects {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     public StaticObjects(WebDriver driver){
-        StaticObjects.driver = driver;
+        this.driver = driver;
     }
 
-    public static StaticObjectsHome goHome(){
+    public StaticObjectsHome goHome(){
         return new StaticObjectsHome(driver);
     }
-    public static StaticObjectsLogin goLogin(){
-        return new StaticObjectsLogin(driver);
-    }
+    public  StaticObjectsLogin goLogin(){return new StaticObjectsLogin(driver);}
+    public  StaticObjectsSearch goSearch(){return new StaticObjectsSearch(driver);}
+
 }

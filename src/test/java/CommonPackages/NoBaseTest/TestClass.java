@@ -3,6 +3,7 @@ package CommonPackages.NoBaseTest;
 import CommonPackages.NoBaseTest.Pages.NoBaseTestHome;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,6 +19,7 @@ public class TestClass {
 
     private WebDriver driver;
     protected NoBaseTestHome homePage;
+
     @BeforeMethod
     public void setUp(){
         driver = new ChromeDriver();
@@ -26,11 +28,19 @@ public class TestClass {
         homePage = new NoBaseTestHome(driver);
     }
 
-
     @Test
     public void testDemo(){
         homePage.clickOnRegisterBtn();
     }
+
+    @Test
+    public void test2(){
+        Assert.assertNotEquals(
+                homePage.
+                        sendInputAndClickSearch("Laptop").
+                        getSearchOutputs(),0,"No Search Results Match the Input");
+    }
+
 
     @AfterMethod
     public void tearDown(){

@@ -1,6 +1,7 @@
 package StaticPageObjectsPackages.WithBaseTest;
 
 import StaticPageObjectsPackages.Pages.StaticObjects;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -10,8 +11,16 @@ public class TestClass extends BaseTest {
 
     @Test
     public void testDemo(){
-        StaticObjects.goHome().clickOnLoginBtn();
-        StaticObjects.goLogin().fillLoginData("","").clickConfLoginBtn();
+        pageObjects.goHome().clickOnLoginBtn();
+        pageObjects.goLogin().fillLoginData("","").clickConfLoginBtn();
 
+    }
+
+    @Test
+    public void testSearch(){
+        pageObjects.goHome().sendInputAndClickSearch("Laptop");
+        Assert.assertNotEquals(
+                pageObjects.goSearch().getSearchOutputs(),0
+                ,"No Search Results Match the Input");
     }
 }
